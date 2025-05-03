@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Bakeries - BakeGenius</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bakery-hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .bakery-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .bakery-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .bakery-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #f8e3e8;
+            color: #333;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #e84a5f;
+            color: white;
+        }
+        
+        .bakery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .bakery-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .bakery-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .bakery-image {
+            height: 200px;
+            background-color: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .bakery-info {
+            padding: 20px;
+        }
+        
+        .bakery-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #e84a5f;
+        }
+        
+        .bakery-rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        
+        .bakery-specialties {
+            margin-bottom: 15px;
+        }
+        
+        .specialty-tag {
+            display: inline-block;
+            background-color: #f8e3e8;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .bakery-location {
+            display: flex;
+            align-items: center;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .bakery-location i {
+            margin-right: 8px;
+            color: #e84a5f;
+        }
+        
+        .bakery-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .partner-cta {
+            background-color: #f8e3e8;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <div class="container">
+            <h1><img src="https://cdn-icons-png.flaticon.com/512/992/992747.png" alt="BakeGenius Logo" class="logo-image"> BakeGenius</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="bakeries.html">Partner Bakeries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="bakery-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1980&q=80');">
+        <div class="container">
+            <h1>Our Partner Bakeries</h1>
+            <p>Browse our network of quality bakeries ready to bring your AI cake designs to life</p>
+        </div>
+    </div>
+    
+    <main class="container">
+        <div class="bakery-filter">
+            <button class="filter-btn active">All Bakeries</button>
+            <button class="filter-btn">Custom Cakes</button>
+            <button class="filter-btn">Wedding Specialists</button>
+            <button class="filter-btn">Gluten-Free</button>
+            <button class="filter-btn">Vegan Options</button>
+        </div>
+        
+        <div class="bakery-grid">
+            <div class="bakery-card">
+                <div class="bakery-image" style="background-image: url('https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80');"></div>
+                <div class="bakery-info">
+                    <h3 class="bakery-name">Sweet Delights Bakery</h3>
+                    <div class="bakery-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5/5)</span>
+                    </div>
+                    <div class="bakery-specialties">
+                        <span class="specialty-tag">Custom Cakes</span>
+                        <span class="specialty-tag">Wedding Cakes</span>
+                        <span class="specialty-tag">Fondant Art</span>
+                    </div>
+                    <div class="bakery-location">
+                        <i class="fas fa-map-marker-alt"></i> Chicago, IL
+                    </div>
+                    <p>Known for their intricate fondant designs and premium quality ingredients.</p>
+                    <a href="#" class="btn">View Bakery</a>
+                </div>
+            </div>
+            
+            <div class="bakery-card">
+                <div class="bakery-image" style="background-image: url('https://images.unsplash.com/photo-1587241321921-91a834d6d191?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1980&q=80');"></div>
+                <div class="bakery-info">
+                    <h3 class="bakery-name">Flour & Sugar Creations</h3>
+                    <div class="bakery-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(5/5)</span>
+                    </div>
+                    <div class="bakery-specialties">
+                        <span class="specialty-tag">Specialty Flavors</span>
+                        <span class="specialty-tag">Gluten-Free</span>
+                        <span class="specialty-tag">Buttercream Art</span>
+                    </div>
+                    <div class="bakery-location">
+                        <i class="fas fa-map-marker-alt"></i> New York, NY
+                    </div>
+                    <p>Specializing in gluten-free options and unique flavor combinations.</p>
+                    <a href="#" class="btn">View Bakery</a>
+                </div>
+            </div>
+            
+            <div class="bakery-card">
+                <div class="bakery-image" style="background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1980&q=80');"></div>
+                <div class="bakery-info">
+                    <h3 class="bakery-name">Golden Crumb Bakehouse</h3>
+                    <div class="bakery-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4/5)</span>
+                    </div>
+                    <div class="bakery-specialties">
+                        <span class="specialty-tag">Vegan Options</span>
+                        <span class="specialty-tag">3D Cakes</span>
+                        <span class="specialty-tag">Birthday Cakes</span>
+                    </div>
+                    <div class="bakery-location">
+                        <i class="fas fa-map-marker-alt"></i> Los Angeles, CA
+                    </div>
+                    <p>Leaders in vegan cake options with rich, indulgent flavors.</p>
+                    <a href="#" class="btn">View Bakery</a>
+                </div>
+            </div>
+            
+            <div class="bakery-card">
+                <div class="bakery-image" style="background-image: url('https://images.unsplash.com/photo-1519676867240-f03562e64548?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80');"></div>
+                <div class="bakery-info">
+                    <h3 class="bakery-name">Cake Canvas</h3>
+                    <div class="bakery-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5/5)</span>
+                    </div>
+                    <div class="bakery-specialties">
+                        <span class="specialty-tag">Artistic Designs</span>
+                        <span class="specialty-tag">Hand-Painted</span>
+                        <span class="specialty-tag">Event Cakes</span>
+                    </div>
+                    <div class="bakery-location">
+                        <i class="fas fa-map-marker-alt"></i> Seattle, WA
+                    </div>
+                    <p>Award-winning bakery known for hand-painted cake art and innovative designs.</p>
+                    <a href="#" class="btn">View Bakery</a>
+                </div>
+            </div>
+            
+            <div class="bakery-card">
+                <div class="bakery-image" style="background-image: url('https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1980&q=80');"></div>
+                <div class="bakery-info">
+                    <h3 class="bakery-name">Celebration Cakes</h3>
+                    <div class="bakery-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4/5)</span>
+                    </div>
+                    <div class="bakery-specialties">
+                        <span class="specialty-tag">Wedding Cakes</span>
+                        <span class="specialty-tag">Multi-tier</span>
+                        <span class="specialty-tag">Classic Designs</span>
+                    </div>
+                    <div class="bakery-location">
+                        <i class="fas fa-map-marker-alt"></i> Boston, MA
+                    </div>
+                    <p>Specializing in elegant wedding cakes and multi-tier celebration designs.</p>
+                    <a href="#" class="btn">View Bakery</a>
+                </div>
+            </div>
+            
+            <div class="bakery-card">
+                <div class="bakery-image" style="background-image: url('https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1922&q=80');"></div>
+                <div class="bakery-info">
+                    <h3 class="bakery-name">Frost & Flourish</h3>
+                    <div class="bakery-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(5/5)</span>
+                    </div>
+                    <div class="bakery-specialties">
+                        <span class="specialty-tag">Modern Designs</span>
+                        <span class="specialty-tag">Geometric Cakes</span>
+                        <span class="specialty-tag">Dairy-Free</span>
+                    </div>
+                    <div class="bakery-location">
+                        <i class="fas fa-map-marker-alt"></i> Austin, TX
+                    </div>
+                    <p>Trendsetting bakery focused on modern aesthetics and dietary accommodations.</p>
+                    <a href="#" class="btn">View Bakery</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="partner-cta">
+            <h2>Are You a Baker?</h2>
+            <p>Join our network of partner bakeries and connect with new customers looking for your cake-crafting expertise.</p>
+            <a href="#" class="btn">Become a Partner</a>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 BakeGenius - Transforming the cake industry with AI innovation</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

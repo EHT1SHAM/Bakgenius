@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BakeGenius</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #f8e3e8;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #e84a5f;
+        }
+        
+        .login-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-header h2 {
+            color: #e84a5f;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #e84a5f;
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+        }
+        
+        .forgot-password {
+            color: #e84a5f;
+            text-decoration: none;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #e84a5f;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #d13b50;
+        }
+        
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .register-link a {
+            color: #e84a5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .social-login {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .social-login p {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .social-login p:before, .social-login p:after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 30%;
+            background-color: #ddd;
+            top: 50%;
+        }
+        
+        .social-login p:before {
+            left: 0;
+        }
+        
+        .social-login p:after {
+            right: 0;
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f8f8f8;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-button:hover {
+            transform: translateY(-3px);
+        }
+        
+        .facebook {
+            background-color: #3b5998;
+            color: white;
+        }
+        
+        .google {
+            background-color: #db4437;
+            color: white;
+        }
+        
+        .twitter {
+            background-color: #1da1f2;
+            color: white;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #e84a5f;
+        }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 20px;
+                margin: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <header>
+        <div class="container">
+            <h1><img src="https://cdn-icons-png.flaticon.com/512/992/992747.png" alt="BakeGenius Logo" class="logo-image"> BakeGenius</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="bakeries.html">Partner Bakeries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="login-container">
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p>Login to your BakeGenius account</p>
+            </div>
+            
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-footer">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="btn">Log In</button>
+            </form>
+            
+            <div class="register-link">
+                <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+            </div>
+            
+            <div class="social-login">
+                <p>Or login with</p>
+                <div class="social-buttons">
+                    <a href="#" class="social-button facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-button google">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-button twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 BakeGenius - Transforming the cake industry with AI innovation</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
